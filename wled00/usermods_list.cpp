@@ -234,6 +234,10 @@
 #include "../usermods/LD2410_v2/usermod_ld2410.h"
 #endif
 
+#ifdef USERMOD_NETWORK_PRESETS
+#include "../usermods/network_presets/usermod_network_presets.h"
+#endif
+
 void registerUsermods()
 {
 /*
@@ -453,5 +457,9 @@ void registerUsermods()
   
   #ifdef USERMOD_LD2410
   usermods.add(new LD2410Usermod());
+  #endif
+
+  #ifdef USERMOD_NETWORK_PRESETS
+  usermods.add(new UsermodNetworkPresets());
   #endif
 }
